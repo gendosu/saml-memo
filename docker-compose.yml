@@ -21,4 +21,4 @@ services:
       # NAME_ID_FORMAT: xxx
       # RAILS_LOG_TO_STDOUT: true
 
-    command: rails s -b 0.0.0.0 -p 3000
+    command: foreman start -f Procfile.dev
