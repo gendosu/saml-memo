@@ -13,6 +13,7 @@ services:
 
     environment:
       RAILS_ENV: development
+      PORT: 3000
       # ISSUER: xxx
       # IDP_ENTITY_ID: xxx
       # IDP_SSO_URL: xxx
