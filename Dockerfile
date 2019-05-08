@@ -6,10 +6,8 @@ FROM      gendosu/ruby-node:ruby-2.3.7-node-8.11.3
 
 ENV PATH "/root/.ndenv/shims:/root/.ndenv/bin:/products/node_modules/.bin:$PATH"
 
+ADD . /products
 WORKDIR /products
-
-COPY Gemfile* /products/
-COPY entrypoint.sh /products/
 
 RUN apt-get update \
   && apt-get install -y --force-yes \
@@ -24,7 +22,5 @@ RUN apt-get update \
   &&  apt-get clean \
   &&  rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/* \
   &&  bundle
-
-RUN rm Gemfile* entrypoint.sh
 
 ENTRYPOINT ["./entrypoint.sh"]
