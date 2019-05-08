@@ -1,0 +1,8 @@
+build:
+  config:
+    NODE_ENV: development
+    RAILS_ENV: development
+  docker:
+    web: Dockerfile.web
+run:
+  web: bundle exec puma -C config/puma.rb

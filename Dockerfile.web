@@ -1,0 +1,26 @@
+# 本体
+#
+# VERSION               0.0.1
+
+FROM      gendosu/saml-memo:latest
+
+ENV PATH "/root/.ndenv/shims:/root/.ndenv/bin:/products/node_modules/.bin:$PATH"
+
+ADD . /products
+WORKDIR /products
+
+# RUN apt-get update \
+#   && apt-get install -y --force-yes \
+#   build-essential \
+#   cmake \
+#   gconf-service \
+#   glib-networking \
+#   fonts-liberation \
+#   libgtk-3-0 \
+#   libappindicator1 \
+#   libappindicator3-1 \
+#   &&  apt-get clean \
+#   &&  rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/* \
+#   &&  bundle
+
+ENTRYPOINT ["./entrypoint.sh"]

@@ -1,0 +1,10 @@
+{
+  "name": "gendosu-saml-memo",
+  "description": "",
+  "scripts": {},
+  "env": {},
+  "formation": {},
+  "addons": [],
+  "buildpacks": [],
+  "stack": "container"
+}
