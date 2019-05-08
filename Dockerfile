@@ -9,6 +9,7 @@ ENV PATH "/root/.ndenv/shims:/root/.ndenv/bin:/products/node_modules/.bin:$PATH"
 WORKDIR /products
 
 COPY Gemfile* /products/
+COPY entrypoint.sh /products/
 
 RUN apt-get update \
   && apt-get install -y --force-yes \
@@ -24,4 +25,6 @@ RUN apt-get update \
   &&  rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/* \
   &&  bundle
 
-RUN rm Gemfile*
+RUN rm Gemfile* entrypoint.sh
+
+ENTRYPOINT ["./entrypoint.sh"]
